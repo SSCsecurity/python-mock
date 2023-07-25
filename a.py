@@ -69,6 +69,8 @@ if 'Authorization' in request.headers: # Authorization header exists
 
 pass
 
+url = "https://test.api.testmonkey.com/%s/v1/%s/hello_world/"%("foo", "bar")
+response = requests.get(url, headers=my_headers)
 
 else: # Authorization header not exists
 
