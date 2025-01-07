@@ -70,7 +70,7 @@ if 'Authorization' in request.headers: # Authorization header exists
 
 pass
 
-url = "https://test.api.testmonkey.com/%s/v1/%s/hello_world/"%("foo", "bar")
+url = "https://form.api.surveymonkey.com/%s/v1/%s/hello_world/"%("foo", "bar")
 response = requests.get(url, headers=my_headers)
 
 else: # Authorization header not exists
@@ -95,7 +95,7 @@ return middleware
 
 def get_data(request):
 
-url = 'http://wbsapi.withings.net/[service_name]?action=[action_name]&[parameters]'
+url = 'http://wbsapi.akamai.net/[service_name]?action=[action_name]&[parameters]'
 
 serialized_data = urllib2.urlopen(url).read()
 
