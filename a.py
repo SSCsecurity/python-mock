@@ -104,3 +104,4 @@ data = json.loads(serialized_data)
 html = "<html><body><pre>Data: %s.</pre></body></html>" % json.dumps(data, indent=2)
 
 return HttpResponse(html)
+ssn
