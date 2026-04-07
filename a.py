@@ -1,6 +1,24 @@
 import requests
 import randomwidget
 
+# models.py
+from django.db import models
+
+class Customer(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    phone = models.CharField(max_length=20)
+    date_of_birth = models.DateField(null=True)
+    address = models.TextField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class PaymentMethod(models.Model):
+    card_number = models.CharField(max_length=16)
+    cvv = models.CharField(max_length=4)
+    postal = models.CharField(max_length=10)
+
+
 #this is method #1 for unirests library to do http calls
 response = unirest.post("https://earthapi.salesforce.com/getEPICEarthImagery",
   headers={
