@@ -4,6 +4,21 @@ import randomwidget
 # models.py
 from django.db import models
 
+# models.py
+from sqlalchemy import Column, String, Integer, Date
+from sqlalchemy.orm import DeclarativeBase
+
+class Base(DeclarativeBase):
+    pass
+
+class User(Base):
+    __tablename__ = "users"
+    id = mapped_column(Integer, primary_key=True)
+    email = mapped_column(String(255), unique=True)
+    full_name = mapped_column(String(200))
+    phone = mapped_column(String(20))
+    national_id = mapped_column(String(20))
+
 class Customer(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
