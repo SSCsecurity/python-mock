@@ -8,6 +8,13 @@ from django.db import models
 from sqlalchemy import Column, String, Integer, Date
 from sqlalchemy.orm import DeclarativeBase
 
+from fastmcp import FastMCP
+mcp = FastMCP("my-server")
+
+@mcp.tool()           # ← server instantiation pattern
+def get_data(): ...
+# Result: likely_mcp_server (H)
+
 class Base(DeclarativeBase):
     pass
 
